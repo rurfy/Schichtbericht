@@ -7,6 +7,15 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!--Strings für den Content-->
+    <string name="beginn">Beginnen</string>
+    <string name="end">Beenden</string>
+    <string name="dienst">Dienst</string>
+    <string name="fahrt">Fahrt</string>
+    <string name="pause">Pause</string>
+    <string name="schicht">Schichtbericht</string>
+    <string name="send">Abschicken</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
