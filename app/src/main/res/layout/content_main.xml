@@ -1,179 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/app_bar_main"
-        tools:context=".MainActivity">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
 
     <TextView
         android:id="@+id/tvPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
         android:text="@string/pause"
-        android:textSize="14sp"
-        android:textStyle="bold"
         android:textColor="@color/onBackground"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvPauseBeginnTag"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bFahrtBeginn" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvConn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/conn"
         android:textColor="@color/onBackground"
-        app:layout_constraintEnd_toStartOf="@+id/bPauseEnd"
-        app:layout_constraintStart_toEndOf="@+id/bPauseBeginn"
-        app:layout_constraintTop_toBottomOf="@+id/tvPause" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bPauseBeginn"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/bPauseBeginn" />
 
     <Button
         android:id="@+id/bPauseBeginn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton_left"
+        android:contentDescription="@string/left"
+        android:padding="16dp"
         android:text="@string/beginn"
-        android:background="@color/colorPrimary"
         android:textColor="@color/onPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPause" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bFahrtEnd"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/roundedbutton_right"
+        android:contentDescription="@string/right"
+        android:padding="16dp"
         android:text="@string/end"
-        android:background="@color/colorPrimary"
         android:textColor="@color/onPrimary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/bPauseEnd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFahrt" />
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/bSchichtEnd" />
 
     <TextView
         android:id="@+id/tvConn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/conn"
         android:textColor="@color/onBackground"
-        app:layout_constraintEnd_toStartOf="@+id/bSchichtEnd"
-        app:layout_constraintStart_toEndOf="@+id/bSchichtBeginn"
-        app:layout_constraintTop_toBottomOf="@+id/tvSchicht" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bSchichtBeginn"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/bSchichtBeginn" />
 
     <Button
         android:id="@+id/bSchichtBeginn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton_left"
+        android:contentDescription="@string/left"
+        android:padding="16dp"
         android:text="@string/beginn"
-        android:background="@color/colorPrimary"
         android:textColor="@color/onPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSchicht" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSchichtBeginnTag" />
 
     <TextView
         android:id="@+id/tvFahrt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
         android:text="@string/fahrt"
-        android:textSize="14sp"
-        android:textStyle="bold"
         android:textColor="@color/onBackground"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvFahrtBeginnTag"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bSchichtBeginn" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bSchichtEnd"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton_right"
+        android:contentDescription="@string/right"
+        android:padding="16dp"
         android:text="@string/end"
-        android:background="@color/colorPrimary"
         android:textColor="@color/onPrimary"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSchicht" />
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/bSchichtBeginn" />
 
     <TextView
         android:id="@+id/tvSchicht"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
         android:text="@string/schicht"
-        android:textSize="14sp"
-        android:textStyle="bold"
         android:textColor="@color/onBackground"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bSchichtBericht" />
-
-    <TextView
-        android:id="@+id/bSchichtBericht"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/schicht"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/onBackground"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="160dp" />
+        app:layout_constraintGuide_begin="180dp" />
 
     <Button
         android:id="@+id/bPauseEnd"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton_right"
+        android:contentDescription="@string/right"
+        android:padding="16dp"
         android:text="@string/end"
-        android:background="@color/colorPrimary"
         android:textColor="@color/onPrimary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPause" />
+        app:layout_constraintStart_toStartOf="@+id/guideline7" />
 
     <Button
         android:id="@+id/bFahrtBeginn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/roundedbutton_left"
+        android:contentDescription="@string/left"
+        android:padding="16dp"
         android:text="@string/beginn"
-        android:background="@color/colorPrimary"
         android:textColor="@color/onPrimary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/bPauseBeginn"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFahrt" />
+        app:layout_constraintTop_toBottomOf="@+id/bSchichtBeginn" />
 
     <TextView
         android:id="@+id/tvConn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/conn"
         android:textColor="@color/onBackground"
-        app:layout_constraintEnd_toStartOf="@+id/bPauseEnd"
-        app:layout_constraintStart_toEndOf="@+id/bFahrtBeginn"
-        app:layout_constraintTop_toBottomOf="@+id/tvFahrt" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bFahrtBeginn"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/bFahrtBeginn" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/imgDes"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/trainwallpaper" />
+
+    <Button
+        android:id="@+id/bSchichtBericht"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/roundedbuttonwhite"
+        android:padding="16dp"
+        android:text="@string/schicht"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <TextView
+        android:id="@+id/tvFahrtBeginnTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bFahrtBeginn"
+        app:layout_constraintStart_toStartOf="@+id/bFahrtBeginn" />
+
+    <TextView
+        android:id="@+id/tvSchichtBeginnTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/bSchichtBeginn"
+        app:layout_constraintTop_toBottomOf="@+id/tvSchicht" />
+
+    <TextView
+        android:id="@+id/tvSchichtEndeTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bSchichtEnd"
+        app:layout_constraintEnd_toEndOf="@+id/bSchichtEnd" />
+
+    <TextView
+        android:id="@+id/tvFahrtEndeTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bFahrtEnd"
+        app:layout_constraintEnd_toEndOf="@+id/bFahrtEnd" />
+
+    <TextView
+        android:id="@+id/tvPauseEndeTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bPauseEnd"
+        app:layout_constraintEnd_toEndOf="@+id/bPauseEnd" />
+
+    <TextView
+        android:id="@+id/tvPauseBeginnTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bPauseBeginn"
+        app:layout_constraintStart_toStartOf="@+id/bPauseBeginn" />
+
+    <TextView
+        android:id="@+id/tvSchichtBeginnOrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bSchichtBeginn"
+        app:layout_constraintEnd_toEndOf="@+id/bSchichtBeginn" />
+
+    <TextView
+        android:id="@+id/tvSchichtEndeOrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bSchichtEnd"
+        app:layout_constraintStart_toStartOf="@+id/bSchichtEnd" />
+
+    <TextView
+        android:id="@+id/tvFahrtBeginnOrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bFahrtBeginn"
+        app:layout_constraintEnd_toEndOf="@+id/bFahrtBeginn" />
+
+    <TextView
+        android:id="@+id/tvFahrtEndeOrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bFahrtEnd"
+        app:layout_constraintStart_toStartOf="@+id/bFahrtEnd" />
+
+    <TextView
+        android:id="@+id/tvPauseBeginnOrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bPauseBeginn"
+        app:layout_constraintEnd_toEndOf="@+id/bPauseBeginn" />
+
+    <TextView
+        android:id="@+id/tvPauseEndeOrt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bPauseEnd"
+        app:layout_constraintStart_toStartOf="@+id/bPauseEnd" />
 
 </android.support.constraint.ConstraintLayout>
