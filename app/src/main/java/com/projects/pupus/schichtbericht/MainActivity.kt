@@ -52,26 +52,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navView.setNavigationItemSelectedListener(this)
 
         bSchichtBeginn.setOnClickListener {
-            var schichtBeginn = Moment(LocalDateTime.now(), getOrtFromAlert())
-            setAllTexts(bSchichtBeginn, tvSchichtBeginnTag, tvSchichtBeginnOrt, schichtBeginn)
+            var schichtBeginn = Moment(LocalDateTime.now(), getOrtFromAlert(tvSchichtBeginnOrt))
+            setAllTexts(bSchichtBeginn, tvSchichtBeginnTag, schichtBeginn)
             setButtonPressedColor(bSchichtBeginn)
         }
 
         bSchichtEnd.setOnClickListener {
-            var schichtEnde = Moment(LocalDateTime.now(), getOrtFromAlert())
-            setAllTexts(bSchichtEnd, tvSchichtEndeTag, tvSchichtEndeOrt, schichtEnde)
+            var schichtEnde = Moment(LocalDateTime.now(), getOrtFromAlert(tvSchichtEndeOrt))
+            setAllTexts(bSchichtEnd, tvSchichtEndeTag, schichtEnde)
             setButtonPressedColor(bSchichtEnd)
         }
 
         bFahrtBeginn.setOnClickListener {
-            var fahrtBeginn = Moment(LocalDateTime.now(), getOrtFromAlert())
-            setAllTexts(bFahrtBeginn, tvFahrtBeginnTag, tvFahrtBeginnOrt, fahrtBeginn)
+            var fahrtBeginn = Moment(LocalDateTime.now(), getOrtFromAlert(tvFahrtBeginnOrt))
+            setAllTexts(bFahrtBeginn, tvFahrtBeginnTag, fahrtBeginn)
             setButtonPressedColor(bFahrtBeginn)
         }
 
         bFahrtEnd.setOnClickListener {
-            var fahrtEnde = Moment(LocalDateTime.now(), getOrtFromAlert())
-            setAllTexts(bFahrtEnd, tvFahrtEndeTag, tvFahrtEndeOrt, fahrtEnde)
+            var fahrtEnde = Moment(LocalDateTime.now(), getOrtFromAlert(tvFahrtEndeOrt))
+            setAllTexts(bFahrtEnd, tvFahrtEndeTag, fahrtEnde)
             setButtonPressedColor(bFahrtEnd)
         }
     }
@@ -84,13 +84,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             button.setBackgroundResource(R.drawable.roundedbutton_left_white)
     }
 
-    fun setAllTexts(button: Button, datum: TextView, ort: TextView, moment: Moment) {
+    fun setAllTexts(button: Button, datum: TextView, moment: Moment) {
         button.text = "${moment.getTime()} Uhr"
         datum.text = moment.getDay()
-        ort.text = moment.ort
     }
 
-    fun getOrtFromAlert(): String {
+    fun getOrtFromAlert(textView: TextView): String {
         var ort = ""
 
         val builder = AlertDialog.Builder(this)
@@ -100,7 +99,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         input.inputType = InputType.TYPE_CLASS_TEXT
         builder.setView(input)
 
-        builder.setPositiveButton("OK") { _, _ -> ort = input.text.toString() }
+        builder.setPositiveButton("OK") { _, _ ->
+            ort = input.text.toString()
+            textView.text = ort
+        }
         builder.setNegativeButton("Abbrechen") { dialog, _ -> dialog.cancel() }
 
         builder.show()
