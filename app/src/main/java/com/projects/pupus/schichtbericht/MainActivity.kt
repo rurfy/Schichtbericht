@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         datum.text = moment.getDay()
     }
 
+    //Ort Alert wird aufgerufen und Ort wird auf textView und Moment geschrieben
     fun getOrtFromAlert(textView: TextView): String {
         var ort = ""
 
